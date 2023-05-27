@@ -153,37 +153,47 @@ footer {
 
 .content-container {
   display: flex;
+  flex-wrap: wrap;
+  padding: 8px;
 }
 
 .left-content {
-  width: 75%;
+  width: 100%;
   flex-direction: column;
 }
 
-.right-content {
+/* .right-content {
   width: 25%;
   background: #0c7db1;
   display: flex;
   flex-direction: column;
-}
+} */
 
 .left-content-top {
-  display: flex;
-  flex-wrap: wrap;
+  /* display: flex; */
+  /* flex-wrap: wrap; */
   gap: 8px;
-  padding: 8px;
+  /* padding: 8px; */
 }
 
+/* .row::after {
+  content: "";
+  clear: both;
+  display: table;
+} */
+
 .lct1 {
-  border: 2px solid grey;
-  width: 320px;
+  border: 2px solid rgb(159, 154, 154);
+  /* width: 25%; */
+  /* width: 30%; */
 }
 
 .lct2 {
-  flex-grow: 1;
+  /* flex-grow: 1; */
   display: flex;
   border: 2px solid grey;
   flex-direction: column;
+  /* width: 75%; */
   /* height: 140px; */
   /* max-width: 445px; */
 }
@@ -191,7 +201,7 @@ footer {
 .lct2t {
   /* background: red; */
   border-bottom: 2px solid grey;
-  padding: 3px;
+  /* padding: 3px; */
   font-weight: 600;
   text-align: center;
   color: #0052cc;
@@ -272,12 +282,13 @@ footer {
   display: flex;
   /* background: greenyellow; */
   flex-direction: row;
-  padding: 8px;
+  margin-top: 8px;
   gap: 8px;
 }
 
 .left-content-bottom {
   border: 2px solid grey;
+  margin-top: 8px;
   /* background: plum; */
   /* flex-grow: 5; */
 }
@@ -346,16 +357,23 @@ footer {
   /* flex-grow: 1; */
 }
 
-.dflex {
+.dflex-responsive {
   display: flex;
+  flex-direction: row;
 }
+/* 
+@media (max-width: 800px) {
+  .dflex-responsive {
+    flex-direction: column;
+  }
+} */
 
 .lct1 {
   display: flex;
 }
 
 .lct1r {
-  flex-grow: 1;
+  /* flex-grow: 1; */
   font-size: small;
   padding: 10px;
   color: black;
@@ -496,3 +514,58 @@ svg {
 polyline {
   transition: all 250ms ease-in-out;
 }
+
+/* Section Width Column */
+
+.col-1 {
+  width: 8.33%;
+}
+.col-2 {
+  width: 16.66%;
+}
+.col-3 {
+  width: 25%;
+}
+.col-4 {
+  width: 33.33%;
+}
+.col-5 {
+  width: 41.66%;
+}
+.col-6 {
+  width: 50%;
+}
+.col-7 {
+  width: 58.33%;
+}
+.col-8 {
+  width: 66.66%;
+}
+.col-9 {
+  width: 75%;
+}
+.col-10 {
+  width: 83.33%;
+}
+.col-11 {
+  width: 91.66%;
+}
+.col-12 {
+  width: 100%;
+}
+
+@media only screen and (max-width: 768px) {
+  [class*="col-"] {
+    width: 100%;
+  }
+
+  .dflex-responsive {
+    flex-direction: column;
+  }
+}
+/* 
+[class*="col-"] {
+  float: left;
+  padding: 5px;
+  border: 1px solid red;
+}  */
