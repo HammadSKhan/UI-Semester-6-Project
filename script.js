@@ -26,3 +26,18 @@ var hamburger = document.querySelector(".hamburger");
 hamburger.addEventListener("click", function () {
   document.querySelector("body").classList.toggle("active");
 });
+
+window.addEventListener("resize", function (event) {
+  if (window.innerWidth < 768) {
+    document.querySelector("body").classList.add("active");
+  } else {
+    document.querySelector("body").classList.remove("active");
+  }
+});
+window.addEventListener("load", function () {
+  if (window.innerWidth < 768) {
+    document.querySelector("body").classList.add("active");
+  } else {
+    document.querySelector("body").classList.remove("active");
+  }
+});
