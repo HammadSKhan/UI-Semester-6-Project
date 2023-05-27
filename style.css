@@ -351,19 +351,13 @@ table#scheduele_table {
   display: flex;
   flex-direction: row;
 }
-/* 
-@media (max-width: 800px) {
-  .dflex-responsive {
-    flex-direction: column;
-  }
-} */
 
 .lct1 {
   display: flex;
 }
 
 .lct1r {
-  /* flex-grow: 1; */
+  flex-grow: 1;
   font-size: small;
   padding: 10px;
   color: black;
@@ -588,6 +582,9 @@ table.table {
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.25rem;
 }
+.big-box-body {
+  overflow-y: auto;
+}
 .m-0 {
   margin: 0 !important;
 }
@@ -674,4 +671,8 @@ table.table {
   justify-content: center;
   background-color: #416eea;
   color: white;
+}
+
+.collapsible-header {
+  cursor: pointer;
 }
