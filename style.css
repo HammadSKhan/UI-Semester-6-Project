@@ -287,13 +287,13 @@ footer {
 }
 
 .left-content-bottom {
-  border: 2px solid grey;
+  /* border: 2px solid grey; */
   margin-top: 8px;
   /* background: plum; */
   /* flex-grow: 5; */
 }
 
-table#scheduele_table {
+table#schedule_table {
   width: 100%;
   text-align: center;
 }
