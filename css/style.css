@@ -1,8 +1,6 @@
 * {
   box-sizing: border-box;
 }
-/* 
-@import "compass/css3"; */
 
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -187,7 +185,7 @@ footer {
 }
 
 .lct1 {
-  border: 2px solid rgb(159, 154, 154);
+  border: 1px solid #ddd;
   /* width: 25%; */
   /* width: 30%; */
 }
@@ -195,7 +193,7 @@ footer {
 .lct2 {
   /* flex-grow: 1; */
   display: flex;
-  border: 2px solid grey;
+  border: 1px solid #ddd;
   flex-direction: column;
   /* width: 75%; */
   /* height: 140px; */
@@ -204,7 +202,7 @@ footer {
 
 .lct2t {
   /* background: red; */
-  border-bottom: 2px solid grey;
+  /* border-bottom: 1px solid #ddd; */
   /* padding: 3px; */
   font-weight: 600;
   text-align: center;
@@ -215,6 +213,10 @@ footer {
   display: flex;
   flex-direction: row;
   flex-grow: 1;
+}
+.lct2head {
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
 }
 .lct2l {
   display: flex;
@@ -242,7 +244,6 @@ footer {
 }
 
 .lct2rb {
-  /* border: 2px solid red; */
   margin-bottom: 4px;
   padding: 13px;
 }
@@ -250,7 +251,6 @@ footer {
 .lct2rb h3 {
   margin: 0;
   color: #0052cc;
-  padding: 3px;
 }
 
 .lct2rb p {
@@ -303,7 +303,7 @@ table#schedule_table {
 }
 
 .stats-box {
-  border: 2px solid grey;
+  border: 1px solid #ddd;
   width: 25%;
   display: flex;
   flex-direction: column;
@@ -316,15 +316,15 @@ table#schedule_table {
 .stats-icon {
   background: #0052cc;
   color: #fff;
-  font-size: 30px;
+  font-size: 25px;
   text-align: center;
   padding-top: 3px;
   border-radius: 100%;
   height: 50px;
   width: 50px;
   margin-top: 20px;
+  padding: 6px;
 }
-
 .stats-text {
   text-align: center;
   font-size: 13px;
@@ -365,6 +365,8 @@ table#schedule_table {
   font-size: 1em;
   padding: 10px;
   color: black;
+  display: flex;
+  flex-direction: column;
 }
 
 .lct1r span {

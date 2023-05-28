@@ -262,12 +262,12 @@ input[type="submit"]:hover {
 
 .sticky-note:nth-child(2) {
   visibility: hidden;
-  left: 200px;
+  left: 190px;
   animation-delay: 2s;
 }
 
 .sticky-note:nth-child(3) {
   visibility: hidden;
-  left: 400px;
+  left: 380px;
   animation-delay: 4s;
 }
