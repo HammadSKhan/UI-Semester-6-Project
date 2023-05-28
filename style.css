@@ -46,6 +46,8 @@ body.active .section {
   height: 100px;
   border-radius: 50%;
   margin: 0 auto;
+  object-fit: cover;
+  object-position: top;
 }
 
 .left-sec .profile h3 {
@@ -130,10 +132,12 @@ body.active .section {
   font-size: 1.3em;
   margin: 0 0 0 20px;
 }
+
 .main-container .section .top_navbar {
   background: #0052cccf;
   /* height: 50px; */
   display: flex;
+  justify-content: space-between;
   align-items: center;
   padding: 12px 30px;
 }
@@ -266,7 +270,7 @@ footer {
   float: right;
   /* margin-right: 120px; */
   width: 80px;
-  height: 25px;
+  /* height: 25px; */
   border-radius: 5px;
   background: #2c76e4;
   color: #fff;
@@ -358,7 +362,7 @@ table#schedule_table {
 
 .lct1r {
   flex-grow: 1;
-  font-size: small;
+  font-size: 1em;
   padding: 10px;
   color: black;
 }
@@ -367,7 +371,7 @@ table#schedule_table {
   /* margin-left: 25px; */
   float: right;
   color: #0052cc;
-  font-size: small;
+  font-weight: 700;
   /* margin-right: 5px; */
 }
 
@@ -408,7 +412,7 @@ table#schedule_table {
   margin-left: 7px;
   color: #1e51dc;
   position: absolute;
-  z-index: 100;
+  /* z-index: 100; */
   font-weight: 700;
   font-size: 0.8em;
 }
@@ -675,4 +679,175 @@ table.table {
 
 .collapsible-header {
   cursor: pointer;
+  display: block;
+  text-decoration: none;
+}
+
+.collapsible-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.5s ease-out;
+}
+
+.collapsible-body:target {
+  max-height: 1000px;
+}
+
+.table-center {
+  text-align: center;
+}
+.table-schedule td:not(:first-child) {
+  border: 1px solid #ddd;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+/* Modal Header */
+.modal-header {
+  padding: 2px 16px;
+  color: white;
+}
+
+/* Modal Body */
+.modal-body {
+  padding: 16px 16px;
+}
+
+/* Modal Footer */
+.modal-footer {
+  padding: 2px 16px;
+  color: white;
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  /* border: 1px solid #888; */
+  min-width: 18rem;
+  width: 20%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+}
+
+/* Add Animation */
+@keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+.file {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  height: 2.5rem;
+}
+.file input {
+  min-width: 14rem;
+  margin: 0;
+  filter: alpha(opacity=0);
+  opacity: 0;
+}
+.file-custom {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 5;
+  height: 2.5rem;
+  padding: 0.5rem 1rem;
+  line-height: 1.5;
+  color: #555;
+  background-color: #fff;
+  border: 0.075rem solid #ddd;
+  border-radius: 0.25rem;
+  box-shadow: inset 0 0.2rem 0.4rem rgba(0, 0, 0, 0.05);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.file-custom:after {
+  content: "Choose photo...";
+}
+.file-custom:before {
+  position: absolute;
+  top: -0.075rem;
+  right: -0.075rem;
+  bottom: -0.075rem;
+  z-index: 6;
+  display: block;
+  content: "Browse";
+  padding: 0.5rem 1rem;
+  color: #555;
+  background-color: #eee;
+  border: 0.075rem solid #ddd;
+  border-radius: 0 0.25rem 0.25rem 0;
+}
+
+/* Focus */
+.file input:focus ~ .file-custom {
+  box-shadow: 0 0 0 0.075rem #fff, 0 0 0 0.2rem #0074d9;
+}
+
+.align-right {
+  /* align-items: end; */
+  justify-content: right;
+}
+
+form.input-form label {
+  display: block;
+  margin-bottom: 10px;
+  color: #0052cc;
+}
+
+form.input-form input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
 }

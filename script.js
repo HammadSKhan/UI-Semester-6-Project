@@ -41,3 +41,24 @@ window.addEventListener("load", function () {
     document.querySelector("body").classList.remove("active");
   }
 });
+
+function setupModal(modalId, btnId) {
+  var modal = document.getElementById(`${modalId}`);
+  var btn = document.getElementById(`${btnId}`);
+  var closeBtn = document.querySelector(`#${modalId}  .close`);
+
+  btn.onclick = function () {
+    modal.style.display = "block";
+  };
+  closeBtn.onclick = function () {
+    modal.style.display = "none";
+  };
+
+  window.addEventListener("click", function (event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  });
+}
+setupModal("uploadImgModal", "uploadBtn");
+setupModal("changePasswordModal", "changePasswordBtn");

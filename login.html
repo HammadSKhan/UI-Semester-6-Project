@@ -2,22 +2,22 @@
 <html>
   <head>
     <title>Login - University Portal</title>
-    <link rel="stylesheet" type="text/css" href="style.css" />
-    <script src="script.js"></script>
+    <!-- <link rel="stylesheet" type="text/css" href="style.css" /> -->
+    <link rel="stylesheet" type="text/css" href="login.css" />
   </head>
   <body>
     <header>
       <div class="top-section">
-        <img src="Logo.png" alt="University Logo" />
+        <img src="images/Logo.png" alt="University Logo" />
         <div class="nav">
           <ul>
-            <li><a href="home.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="printingreport.html">Printing Report</a></li>
-            <li><a href="schedule.html">Teaching's Evaluation</a></li>
-            <li><a href="uploadimage.html">EDC Job Portal</a></li>
-            <li><a href="uploadimage.html">IS / Thesis Portal</a></li>
-            <li><a href="uploadimage.html">Contact</a></li>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Printing Report</a></li>
+            <li><a href="#">Teaching's Evaluation</a></li>
+            <li><a href="#">EDC Job Portal</a></li>
+            <li><a href="#">IS / Thesis Portal</a></li>
+            <li><a href="#">Contact</a></li>
           </ul>
         </div>
       </div>
@@ -28,19 +28,22 @@
         <div class="login-container">
           <h2>Login</h2>
           <div class="login-box">
-            <form onsubmit="return validateLoginForm()">
+            <div class="dflex mb-8">
               <label for="email">Email:</label>
               <input type="email" id="email" required />
-
+              <div id="email-err"></div>
+            </div>
+            <div class="dflex mb-8">
               <label for="password">Password:</label>
               <input type="password" id="password" required />
+              <div id="password-err"></div>
+            </div>
 
-              <div class="forgot-password">
-                <a href="#">Forgot Password?</a>
-              </div>
+            <div class="forgot-password">
+              <a href="#">Forgot Password?</a>
+            </div>
 
-              <input type="submit" value="Log In" />
-            </form>
+            <input onclick="validateLoginForm()" type="submit" value="Log In" />
           </div>
         </div>
         <div class="notice-container">
@@ -53,8 +56,6 @@
         </div>
       </div>
     </div>
-    <script src="script.js"></script>
+    <script src="login.js"></script>
   </body>
 </html>
-
-<

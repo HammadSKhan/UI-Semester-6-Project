@@ -20,6 +20,10 @@
               <i class="fas fa-bars"></i>
             </a>
           </div>
+          <div>
+            <a id="changePasswordBtn" class="btn">Change Password</a>
+            <a href="login.html" class="btn">Signout</a>
+          </div>
         </div>
         <div class="content">
           <div class="content-container">
@@ -112,7 +116,7 @@
                       <div class="lct2rf">
                         <div class="lct2rf-text">
                           learn more
-                          <button type="submit">check</button>
+                          <button type="submit" class="btn">check</button>
                         </div>
                       </div>
                     </div>
@@ -155,48 +159,110 @@
                     <h3>Course schedule</h3>
                   </div>
                   <div class="big-box-body">
-                    <table class="table" id="schedule_table">
+                    <table
+                      class="table table-center table-schedule"
+                      align="center"
+                    >
                       <tr>
-                        <th>Today</th>
-                        <th>Time</th>
-                        <th>Building</th>
-                        <th>Room</th>
+                        <th><b>Day/Period</b></th>
+                        <th>
+                          I
+                          <br />
+                          8:30AM to 9:30AM
+                        </th>
+                        <th>
+                          II
+                          <br />
+                          9:45AM to 11:30AM
+                        </th>
+                        <th>
+                          III
+                          <br />
+                          11:30AM to 1:00PM
+                        </th>
+                        <th>
+                          IV
+                          <br />
+                          1:15AM to 2:45PM
+                        </th>
+                        <th>
+                          V
+                          <br />
+                          3:00PM to 4:30PM
+                        </th>
+                        <th>
+                          VI
+                          <br />
+                          4:45AM to 6:15PM
+                        </th>
+                        <th>
+                          VII
+                          <br />
+                          6:30PM to 8:00PM
+                        </th>
+                        <th>
+                          VIII
+                          <br />
+                          8:15PM to 9:30PM
+                        </th>
                       </tr>
                       <tr>
-                        <td>UI</td>
-                        <td>3:00 p.m.</td>
-                        <td>100 campus</td>
-                        <td>cs-lab</td>
+                        <td><b>Monday</b></td>
+                        <td colspan="2">-</td>
+                        <td colspan="2">-</td>
+                        <td colspan="2">CSC4724 : User Interface Design</td>
+                        <td colspan="2">-</td>
                       </tr>
                       <tr>
-                        <td>UI</td>
-                        <td>3:00 p.m.</td>
-                        <td>100 campus</td>
-                        <td>cs-lab</td>
+                        <td><b>Tuesday</b></td>
+                        <td colspan="2">-</td>
+                        <td colspan="2">-</td>
+                        <td colspan="2">-</td>
+                        <td colspan="2">CSC2201 : Computer Networks</td>
                       </tr>
                       <tr>
-                        <td>UI</td>
-                        <td>3:00 p.m.</td>
-                        <td>100 campus</td>
-                        <td>cs-lab</td>
+                        <td><b>Wednesday</b></td>
+                        <td colspan="2">-</td>
+                        <td colspan="2">MTH3101 : Linear Algebra</td>
+                        <td colspan="2">CSC2401 : Operating Systems</td>
+                        <td colspan="2">-</td>
                       </tr>
                       <tr>
-                        <td>UI</td>
-                        <td>3:00 p.m.</td>
-                        <td>100 campus</td>
-                        <td>cs-lab</td>
+                        <td><b>Thursday</b></td>
+                        <td colspan="2">-</td>
+                        <td colspan="2">
+                          CSCL3205 : Computer Networks and Data Communication
+                          (Lab)
+                        </td>
+                        <td colspan="2">
+                          CSL4101 : Artifical Intelligence (Lab)
+                        </td>
+                        <td colspan="2">-</td>
                       </tr>
                       <tr>
-                        <td>UI</td>
-                        <td>3:00 p.m.</td>
-                        <td>100 campus</td>
-                        <td>cs-lab</td>
+                        <td><b>Friday</b></td>
+                        <td colspan="2">ENG2201 : Technical Writing</td>
+                        <td colspan="2">
+                          <i><b>Prayer Break!</b></i>
+                        </td>
+                        <td colspan="2">
+                          CSC1205 : Technical and Business Writing
+                        </td>
+                        <td colspan="2">-</td>
                       </tr>
                       <tr>
-                        <td>UI</td>
-                        <td>3:00 p.m.</td>
-                        <td>100 campus</td>
-                        <td>cs-lab</td>
+                        <td><b>Saturday</b></td>
+                        <td colspan="2">-</td>
+                        <td colspan="2">CSC4101 : Artificial Intelligence</td>
+                        <td colspan="2">-</td>
+                        <td colspan="2">-</td>
+                      </tr>
+                      <tr>
+                        <td><b>Sunday</b></td>
+                        <td colspan="2">-</td>
+                        <td colspan="2">-</td>
+                        <td colspan="2">-</td>
+                        <td colspan="2">-</td>
                       </tr>
                     </table>
                   </div>
@@ -212,7 +278,11 @@
       </div>
       <div class="left-sec">
         <div class="profile">
-          <img src="" alt="profile_picture" />
+          <img
+            id="uploadBtn"
+            src="https://img.freepik.com/premium-photo/smiling-asian-student-holding-laptop-looking-camera-university-campus-education-concept_219285-840.jpg?w=360"
+            alt="profile_picture"
+          />
           <h3>Ali Mobin</h3>
           <p>2012293</p>
           <p>BSCS 6E</p>
@@ -266,6 +336,67 @@
     <!-- <footer>
         <p>&copy; 2023 University Portal. All rights reserved.</p>
       </footer> -->
+
+    <div id="uploadImgModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header bg-primary">
+          <span class="close">&times;</span>
+          <h2>Upload Image</h2>
+        </div>
+        <div class="modal-body">
+          <label class="file">
+            <input type="file" id="file" />
+            <span class="file-custom"></span>
+          </label>
+        </div>
+        <div class="mb-8 dflex-responsive modal-footer">
+          <button class="btn btn-big">Submit Image</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="changePasswordModal" class="modal">
+      <div class="modal-content">
+        <form method="post" class="input-form" action="#">
+          <div class="modal-header bg-primary">
+            <span class="close">&times;</span>
+            <h2>Change Password</h2>
+          </div>
+          <div class="modal-body">
+            <div>
+              <label for="current_password">Current Password</label>
+              <input
+                type="password"
+                name="current-password"
+                id="current_password"
+                required
+              />
+            </div>
+            <div>
+              <label for="new_password">New Password</label>
+              <input
+                type="password"
+                name="new-password"
+                id="new_password"
+                required
+              />
+            </div>
+            <div>
+              <label for="confirm_password">Confirm New Password</label>
+              <input
+                type="password"
+                name="confirm-password"
+                id="confirm_password"
+                required
+              />
+            </div>
+          </div>
+          <div class="mb-8 dflex-responsive modal-footer">
+            <button class="btn btn-big">Update Password</button>
+          </div>
+        </form>
+      </div>
+    </div>
   </body>
   <script src="script.js"></script>
 </html>
