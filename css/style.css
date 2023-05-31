@@ -47,6 +47,30 @@ body.active .section {
   object-fit: cover;
   object-position: top;
 }
+.profile-image::after {
+  font-family: "Font Awesome 5 Free";
+  content: "\f304";
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+  background: white;
+  border-radius: 10px;
+  color: #0052cc;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 900;
+  text-align: center;
+  padding: 4px;
+}
+.profile-image:hover::after {
+  cursor: pointer;
+}
+
+.profile-image {
+  position: relative;
+  width: fit-content;
+  margin: auto;
+}
 
 .left-sec .profile h3 {
   color: #ffffff;
@@ -135,9 +159,11 @@ body.active .section {
   background: #0052cccf;
   /* height: 50px; */
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   padding: 12px 30px;
+  gap: 8px;
 }
 
 .main-container .section .top_navbar .hamburger a {
@@ -355,7 +381,23 @@ table#schedule_table {
   display: flex;
   flex-direction: row;
 }
+.dflex-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+.dflex {
+  display: flex;
+}
 
+.row-gap-5 {
+  row-gap: 5px;
+}
+.justify-end {
+  justify-content: end;
+}
+.flex-grow {
+  flex-grow: 1;
+}
 .lct1 {
   display: flex;
 }
@@ -553,7 +595,6 @@ polyline {
     flex-direction: column;
   }
 }
-
 /* My Courses CSS */
 
 table#my_courses_table {
@@ -678,7 +719,9 @@ table.table {
   background-color: #416eea;
   color: white;
 }
-
+.page-header div {
+  padding: 8px;
+}
 .collapsible-header {
   cursor: pointer;
   display: block;

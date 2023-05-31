@@ -7,7 +7,7 @@
     <title>Home - University Portal</title>
     <link
       rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
     />
     <link rel="stylesheet" type="text/css" href="css/style.css" />
   </head>
@@ -15,12 +15,15 @@
     <div class="main-container">
       <div class="section">
         <div class="top_navbar">
-          <div class="hamburger">
-            <a href="#">
-              <i class="fas fa-bars"></i>
-            </a>
+          <div class="dflex flex-center">
+            <div class="hamburger">
+              <a href="#">
+                <i class="fas fa-bars"></i>
+              </a>
+            </div>
+            <p>Home</p>
           </div>
-          <div>
+          <div class="dflex-wrap justify-end row-gap-5 flex-grow">
             <a id="changePasswordBtn" class="btn">Change Password</a>
             <a href="login.html" class="btn">Signout</a>
           </div>
@@ -278,18 +281,16 @@
       </div>
       <div class="left-sec">
         <div class="profile">
-          <img
-            id="uploadBtn"
-            src="images/userimage.avif"
-            alt="profile_picture"
-          />
+          <div id="uploadBtn" class="profile-image">
+            <img src="images/userimage.avif" alt="profile_picture" />
+          </div>
           <h3>John Connor</h3>
           <p>2012293</p>
           <p>BSCS 6E</p>
         </div>
         <ul>
           <li>
-            <a href="main.html" class="active">
+            <a href="index.html" class="active">
               <span class="icon"><i class="fas fa-home"></i></span>
               <span class="item">Home</span>
             </a>
