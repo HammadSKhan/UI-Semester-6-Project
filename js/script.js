@@ -25,6 +25,8 @@
 var hamburger = document.querySelector(".hamburger");
 hamburger.addEventListener("click", function () {
   document.querySelector("body").classList.toggle("active");
+
+  document.querySelector(".hamburger").classList.toggle("fa-spin");
 });
 
 window.addEventListener("resize", function (event) {

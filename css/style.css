@@ -337,6 +337,7 @@ table#schedule_table {
   align-items: center;
   flex-wrap: wrap;
   gap: 3px;
+  text-decoration: none;
 }
 
 .stats-icon {
@@ -895,4 +896,13 @@ form.input-form input {
   padding: 8px;
   margin-bottom: 15px;
   border: 1px solid #ccc;
+}
+.nav-img img {
+  height: 60px;
+}
+
+.nav-img {
+  justify-content: end;
+  align-items: center;
+  flex-grow: 1;
 }

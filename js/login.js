@@ -29,76 +29,54 @@ window.addEventListener("DOMContentLoaded", function () {
   setInterval(showNextNotice, 13000); // Change the duration as desired
 });
 
-function click1() {
-  var username_ = document.getElementById("email");
-  var password1_ = document.getElementById("password");
-  var emailErrMsg = document.querySelector("#email-err");
-  var passwordErrMsg = document.querySelector("#password-err");
-  // emailErrMsg.innerHTML = "";
-  // passwordErrMsg.innerHTML = "";
-  emailErrMsg.style.display = "none";
-  passwordErrMsg.style.display = "none";
-
-  if (username_.value.trim() == "") {
-    username_.classList.add("error");
-    emailErrMsg.style.display = "block";
-    emailErrMsg.innerHTML = "Must enter email";
-  } else {
-    username_.classList.remove("error");
-  }
-  if (password1_.value.trim() == "") {
-    password1_.classList.add("error");
-    passwordErrMsg.style.display = "block";
-    passwordErrMsg.innerHTML = "Must enter password";
-  } else {
-    password1_.classList.remove("error");
-  }
-}
-
-function ValidateEmail() {
-  var inputTextEmail = document.getElementById("email");
-  var emailErrMsg = document.querySelector("#email-err");
-  emailErrMsg.style.display = "none";
-  var mailformat = /^\w+([\.-]?\w+)@\w+([\.-]?\w+)(\.\w{2,3})+$/;
-  if (!inputTextEmail.value.match(mailformat)) {
-    emailErrMsg.style.display = "block";
-    emailErrMsg.innerHTML = "Invalid email address!";
-  } else {
-  }
-}
-
-function ValidatePassword() {
-  var inputTextPass = document.getElementById("password");
-  var passwordErrMsg = document.querySelector("#password-err");
-  passwordErrMsg.style.display = "none";
-  var passw = /^(?=.[a-z])(?=.*[A-Z]).{6,20}$/;
-  if (!inputTextPass.value.match(passw)) {
-    passwordErrMsg.style.display = "block";
-    passwordErrMsg.innerHTML = "must contain 8 chars 1 num & 1 special char";
-  }
-}
-
 function validateLoginForm(e) {
-  // e.preventDefault();
-  var inputTextEmail = document.getElementById("email");
-  var emailErrMsg = document.querySelector("#email-err");
-  emailErrMsg.style.display = "none";
-  var inputTextPass = document.getElementById("password");
-  var passwordErrMsg = document.querySelector("#password-err");
-  passwordErrMsg.style.display = "none";
+  // var fullName = document.getElementById("fullName");
+  var email = document.getElementById("email");
+  // var phone = document.getElementById("phone");
+  var password = document.getElementById("password");
+  // var confirmPassword = document.getElementById("confirmPassword2");
 
-  var mailformat = /^\w+([\.-]?\w+)@\w+([\.-]?\w+)(\.\w{2,3})+$/;
-  var passw = /^(?=.[a-z])(?=.*[A-Z]).{6,20}$/;
+  //reset
+  // resetFields("fullName");
+  resetFields("email");
+  // resetFields("phone");
+  resetFields("password");
+  // resetFields("confirmPassword2");
 
-  if (inputTextEmail.value.trim() == "" || inputTextPass.value.trim() == "") {
-    click1();
-  } else if (!inputTextEmail.value.match(mailformat)) {
-    ValidateEmail();
-  } else if (!inputTextPass.value.match(passw)) {
-    ValidatePassword();
-  } else {
-    //? Successfully validated...
-    window.location.href = "main.html";
+  var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+  var passw = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/;
+
+  if (email.value.trim() == "") {
+    erroMessageEmptyFields("email");
+  } else if (!email.value.match(mailformat)) {
+    errorMessageInvalidFields("email", "Format abc@xyz.com");
   }
-  return false;
+
+  if (password.value.trim() == "") {
+    erroMessageEmptyFields("password");
+  } else if (!password.value.match(passw)) {
+    errorMessageInvalidFields(
+      "password",
+      "must contain 8 chars 1 num & 1 special char"
+    );
+  }
+}
+
+function resetFields(id) {
+  document.querySelector(`#${id} ~ .side-error`).innerHTML = "";
+  document.querySelector(`#${id}`).classList.remove("error");
+}
+
+function erroMessageEmptyFields(id) {
+  var element = document.querySelector(`#${id}`);
+  var errorClass = document.querySelector(`#${id} ~ .side-error`);
+  element.classList.add("error");
+  errorClass.innerHTML = "Please enter field";
+}
+
+function errorMessageInvalidFields(id, msg) {
+  var element = document.querySelector(`#${id}`);
+  var errorClass = document.querySelector(`#${id} ~ .side-error`);
+  element.classList.add("error");
+  errorClass.innerHTML = `${msg}`;
 }
